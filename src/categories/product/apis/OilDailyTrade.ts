@@ -1,6 +1,6 @@
-import { KrxClient } from '../../../core/KrxClient';
-import { API_CATEGORY, API_ID } from '../../../core/constants';
-import { OilDailyTrade } from '../product.types';
+import { KrxClient } from "../../../core/KrxClient";
+import { API_CATEGORY, API_ID } from "../../../core/constants";
+import { OilDailyTrade } from "../product.types";
 
 /**
  * 석유시장 일별매매정보 API

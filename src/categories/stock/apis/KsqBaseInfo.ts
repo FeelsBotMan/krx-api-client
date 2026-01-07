@@ -1,6 +1,6 @@
-import { KrxClient } from '../../../core/KrxClient';
-import { API_CATEGORY, API_ID } from '../../../core/constants';
-import { StockBaseInfo } from '../stock.types';
+import { KrxClient } from "../../../core/KrxClient";
+import { API_CATEGORY, API_ID } from "../../../core/constants";
+import { StockBaseInfo } from "../stock.types";
 
 /**
  * 코스닥 종목기본정보 API
@@ -17,6 +17,10 @@ export class KsqBaseInfoApi {
    * @returns 종목기본정보 배열
    */
   fetch(params: Record<string, string> = {}): Promise<StockBaseInfo[]> {
-    return this.client.get<StockBaseInfo>(API_CATEGORY.STOCK, this.apiId, params);
+    return this.client.get<StockBaseInfo>(
+      API_CATEGORY.STOCK,
+      this.apiId,
+      params
+    );
   }
 }

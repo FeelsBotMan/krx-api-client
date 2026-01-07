@@ -1,6 +1,6 @@
-import { KrxClient } from '../../../core/KrxClient';
-import { API_CATEGORY, API_ID } from '../../../core/constants';
-import { SriBondInfo } from '../esg.types';
+import { KrxClient } from "../../../core/KrxClient";
+import { API_CATEGORY, API_ID } from "../../../core/constants";
+import { SriBondInfo } from "../esg.types";
 
 /**
  * 사회책임투자채권 정보 API

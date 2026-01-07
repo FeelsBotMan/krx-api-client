@@ -1,7 +1,7 @@
-import { KrxClient } from '../../core/KrxClient';
-import { KtsDailyTradeApi } from './apis/KtsDailyTrade';
-import { BndDailyTradeApi } from './apis/BndDailyTrade';
-import { SmbDailyTradeApi } from './apis/SmbDailyTrade';
+import { KrxClient } from "../../core/KrxClient";
+import { KtsDailyTradeApi } from "./apis/KtsDailyTrade";
+import { BndDailyTradeApi } from "./apis/BndDailyTrade";
+import { SmbDailyTradeApi } from "./apis/SmbDailyTrade";
 
 /**
  * 채권 카테고리 클라이언트

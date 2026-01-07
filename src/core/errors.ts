@@ -9,7 +9,7 @@ export class KrxApiError extends Error {
     public readonly response?: unknown
   ) {
     super(message);
-    this.name = 'KrxApiError';
+    this.name = "KrxApiError";
     Object.setPrototypeOf(this, KrxApiError.prototype);
   }
 }
@@ -17,7 +17,7 @@ export class KrxApiError extends Error {
 export class KrxClientError extends Error {
   constructor(message: string, public readonly cause?: Error) {
     super(message);
-    this.name = 'KrxClientError';
+    this.name = "KrxClientError";
     Object.setPrototypeOf(this, KrxClientError.prototype);
   }
 }

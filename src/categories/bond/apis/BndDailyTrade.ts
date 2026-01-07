@@ -1,6 +1,6 @@
-import { KrxClient } from '../../../core/KrxClient';
-import { API_CATEGORY, API_ID } from '../../../core/constants';
-import { BondDailyTrade } from '../bond.types';
+import { KrxClient } from "../../../core/KrxClient";
+import { API_CATEGORY, API_ID } from "../../../core/constants";
+import { BondDailyTrade } from "../bond.types";
 
 /**
  * 일반채권시장 일별매매정보 API

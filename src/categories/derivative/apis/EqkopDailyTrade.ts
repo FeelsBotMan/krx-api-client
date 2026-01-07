@@ -1,6 +1,6 @@
-import { KrxClient } from '../../../core/KrxClient';
-import { API_CATEGORY, API_ID } from '../../../core/constants';
-import { OptDailyTrade } from '../derivative.types';
+import { KrxClient } from "../../../core/KrxClient";
+import { API_CATEGORY, API_ID } from "../../../core/constants";
+import { OptDailyTrade } from "../derivative.types";
 
 /**
  * 주식옵션(코스닥) 일별매매정보 API

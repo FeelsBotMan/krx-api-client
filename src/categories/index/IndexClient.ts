@@ -1,9 +1,9 @@
-import { KrxClient } from '../../core/KrxClient';
-import { KrxDailyApi } from './apis/KrxDaily';
-import { KospiDailyApi } from './apis/KospiDaily';
-import { KosdaqDailyApi } from './apis/KosdaqDaily';
-import { BondDailyApi } from './apis/BondDaily';
-import { DerivativeDailyApi } from './apis/DerivativeDaily';
+import { KrxClient } from "../../core/KrxClient";
+import { KrxDailyApi } from "./apis/KrxDaily";
+import { KospiDailyApi } from "./apis/KospiDaily";
+import { KosdaqDailyApi } from "./apis/KosdaqDaily";
+import { BondDailyApi } from "./apis/BondDaily";
+import { DerivativeDailyApi } from "./apis/DerivativeDaily";
 
 /**
  * 지수 카테고리 클라이언트

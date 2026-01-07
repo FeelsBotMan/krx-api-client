@@ -1,7 +1,7 @@
-import { KrxClient } from '../../core/KrxClient';
-import { EtfDailyTradeApi } from './apis/EtfDailyTrade';
-import { EtnDailyTradeApi } from './apis/EtnDailyTrade';
-import { ElwDailyTradeApi } from './apis/ElwDailyTrade';
+import { KrxClient } from "../../core/KrxClient";
+import { EtfDailyTradeApi } from "./apis/EtfDailyTrade";
+import { EtnDailyTradeApi } from "./apis/EtnDailyTrade";
+import { ElwDailyTradeApi } from "./apis/ElwDailyTrade";
 
 /**
  * 증권상품 카테고리 클라이언트

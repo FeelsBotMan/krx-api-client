@@ -1,7 +1,7 @@
-import { KrxClient } from '../../core/KrxClient';
-import { SriBondInfoApi } from './apis/SriBondInfo';
-import { EsgEtpInfoApi } from './apis/EsgEtpInfo';
-import { EsgIndexInfoApi } from './apis/EsgIndexInfo';
+import { KrxClient } from "../../core/KrxClient";
+import { SriBondInfoApi } from "./apis/SriBondInfo";
+import { EsgEtpInfoApi } from "./apis/EsgEtpInfo";
+import { EsgIndexInfoApi } from "./apis/EsgIndexInfo";
 
 /**
  * ESG 카테고리 클라이언트

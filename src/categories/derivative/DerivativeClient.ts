@@ -1,10 +1,10 @@
-import { KrxClient } from '../../core/KrxClient';
-import { FutDailyTradeApi } from './apis/FutDailyTrade';
-import { EqsfuStkDailyTradeApi } from './apis/EqsfuStkDailyTrade';
-import { EqkfuKsqDailyTradeApi } from './apis/EqkfuKsqDailyTrade';
-import { OptDailyTradeApi } from './apis/OptDailyTrade';
-import { EqsopDailyTradeApi } from './apis/EqsopDailyTrade';
-import { EqkopDailyTradeApi } from './apis/EqkopDailyTrade';
+import { KrxClient } from "../../core/KrxClient";
+import { FutDailyTradeApi } from "./apis/FutDailyTrade";
+import { EqsfuStkDailyTradeApi } from "./apis/EqsfuStkDailyTrade";
+import { EqkfuKsqDailyTradeApi } from "./apis/EqkfuKsqDailyTrade";
+import { OptDailyTradeApi } from "./apis/OptDailyTrade";
+import { EqsopDailyTradeApi } from "./apis/EqsopDailyTrade";
+import { EqkopDailyTradeApi } from "./apis/EqkopDailyTrade";
 
 /**
  * 파생상품 카테고리 클라이언트

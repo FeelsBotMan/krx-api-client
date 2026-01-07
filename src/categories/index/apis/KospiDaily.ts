@@ -1,6 +1,6 @@
-import { KrxClient } from '../../../core/KrxClient';
-import { API_CATEGORY, API_ID } from '../../../core/constants';
-import { KrxIndexDaily } from '../index.types';
+import { KrxClient } from "../../../core/KrxClient";
+import { API_CATEGORY, API_ID } from "../../../core/constants";
+import { KrxIndexDaily } from "../index.types";
 
 /**
  * KOSPI 시리즈 일별시세정보 API

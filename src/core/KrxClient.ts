@@ -1,5 +1,5 @@
-import { KrxClientOptions, KrxApiResponse } from './types';
-import { KrxApiError, KrxClientError } from './errors';
+import { KrxClientOptions, KrxApiResponse } from "./types";
+import { KrxApiError, KrxClientError } from "./errors";
 
 /**
  * KRX Open API 공통 HTTP 클라이언트
@@ -11,16 +11,18 @@ export class KrxClient {
 
   constructor(options: KrxClientOptions) {
     if (!options.serviceKey) {
-      throw new KrxClientError('serviceKey is required');
+      throw new KrxClientError("serviceKey is required");
     }
 
     // AUTH_KEY는 옵션 또는 환경변수에서 가져옴
     const authKey = options.authKey ?? process.env.AUTH_KEY;
     if (!authKey) {
-      throw new KrxClientError('AUTH_KEY is required. Set it in options or AUTH_KEY environment variable.');
+      throw new KrxClientError(
+        "AUTH_KEY is required. Set it in options or AUTH_KEY environment variable."
+      );
     }
 
-    this.baseUrl = options.baseUrl ?? 'https://data-dbg.krx.co.kr';
+    this.baseUrl = options.baseUrl ?? "https://data-dbg.krx.co.kr";
     this.serviceKey = options.serviceKey;
     this.authKey = authKey;
   }
@@ -32,7 +34,11 @@ export class KrxClient {
    * @param params 쿼리 파라미터
    * @returns API 응답 데이터 배열
    */
-  async get<T>(category: string, apiId: string, params: Record<string, string>): Promise<T[]> {
+  async get<T>(
+    category: string,
+    apiId: string,
+    params: Record<string, string>
+  ): Promise<T[]> {
     try {
       const query = new URLSearchParams({
         serviceKey: this.serviceKey,
@@ -42,7 +48,7 @@ export class KrxClient {
       const url = `${this.baseUrl}/svc/apis/${category}/${apiId}?${query}`;
       const response = await fetch(url, {
         headers: {
-          'AUTH_KEY': this.authKey,
+          AUTH_KEY: this.authKey,
         },
       });
 
@@ -53,7 +59,7 @@ export class KrxClient {
         );
       }
 
-      const json: KrxApiResponse<T> = await response.json();
+      const json = (await response.json()) as KrxApiResponse<T>;
 
       // OutBlock_1이 없거나 배열이 아닌 경우 빈 배열 반환
       if (!Array.isArray(json?.OutBlock_1)) {
@@ -70,7 +76,7 @@ export class KrxClient {
         throw new KrxClientError(`Request failed: ${error.message}`, error);
       }
 
-      throw new KrxClientError('Unknown error occurred');
+      throw new KrxClientError("Unknown error occurred");
     }
   }
 }

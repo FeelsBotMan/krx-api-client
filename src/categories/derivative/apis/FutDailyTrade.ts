@@ -1,6 +1,6 @@
-import { KrxClient } from '../../../core/KrxClient';
-import { API_CATEGORY, API_ID } from '../../../core/constants';
-import { FutDailyTrade } from '../derivative.types';
+import { KrxClient } from "../../../core/KrxClient";
+import { API_CATEGORY, API_ID } from "../../../core/constants";
+import { FutDailyTrade } from "../derivative.types";
 
 /**
  * 선물 일별매매정보 (주식선물外) API

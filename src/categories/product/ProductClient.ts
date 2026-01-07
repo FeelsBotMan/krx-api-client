@@ -1,7 +1,7 @@
-import { KrxClient } from '../../core/KrxClient';
-import { OilDailyTradeApi } from './apis/OilDailyTrade';
-import { GoldDailyTradeApi } from './apis/GoldDailyTrade';
-import { EtsDailyTradeApi } from './apis/EtsDailyTrade';
+import { KrxClient } from "../../core/KrxClient";
+import { OilDailyTradeApi } from "./apis/OilDailyTrade";
+import { GoldDailyTradeApi } from "./apis/GoldDailyTrade";
+import { EtsDailyTradeApi } from "./apis/EtsDailyTrade";
 
 /**
  * 일반상품 카테고리 클라이언트

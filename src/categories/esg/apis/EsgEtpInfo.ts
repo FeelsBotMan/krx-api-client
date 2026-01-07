@@ -1,6 +1,6 @@
-import { KrxClient } from '../../../core/KrxClient';
-import { API_CATEGORY, API_ID } from '../../../core/constants';
-import { EsgEtpInfo } from '../esg.types';
+import { KrxClient } from "../../../core/KrxClient";
+import { API_CATEGORY, API_ID } from "../../../core/constants";
+import { EsgEtpInfo } from "../esg.types";
 
 /**
  * ESG 증권상품 정보 API

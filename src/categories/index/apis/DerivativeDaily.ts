@@ -1,6 +1,6 @@
-import { KrxClient } from '../../../core/KrxClient';
-import { API_CATEGORY, API_ID } from '../../../core/constants';
-import { DerivativeIndexDaily } from '../index.types';
+import { KrxClient } from "../../../core/KrxClient";
+import { API_CATEGORY, API_ID } from "../../../core/constants";
+import { DerivativeIndexDaily } from "../index.types";
 
 /**
  * 파생상품지수 시세정보 API
@@ -18,8 +18,12 @@ export class DerivativeDailyApi {
    * @returns 파생상품지수 시세정보 배열
    */
   fetch(params: { basDd: string }): Promise<DerivativeIndexDaily[]> {
-    return this.client.get<DerivativeIndexDaily>(API_CATEGORY.INDEX, this.apiId, {
-      BAS_DD: params.basDd,
-    });
+    return this.client.get<DerivativeIndexDaily>(
+      API_CATEGORY.INDEX,
+      this.apiId,
+      {
+        BAS_DD: params.basDd,
+      }
+    );
   }
 }

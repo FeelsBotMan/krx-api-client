@@ -1,6 +1,6 @@
-import { KrxClient } from '../../../core/KrxClient';
-import { API_CATEGORY, API_ID } from '../../../core/constants';
-import { ProductDailyTrade } from '../product.types';
+import { KrxClient } from "../../../core/KrxClient";
+import { API_CATEGORY, API_ID } from "../../../core/constants";
+import { ProductDailyTrade } from "../product.types";
 
 /**
  * 배출권 시장 일별매매정보 API
@@ -18,8 +18,12 @@ export class EtsDailyTradeApi {
    * @returns 일별매매정보 배열
    */
   fetch(params: { basDd: string }): Promise<ProductDailyTrade[]> {
-    return this.client.get<ProductDailyTrade>(API_CATEGORY.PRODUCT, this.apiId, {
-      BAS_DD: params.basDd,
-    });
+    return this.client.get<ProductDailyTrade>(
+      API_CATEGORY.PRODUCT,
+      this.apiId,
+      {
+        BAS_DD: params.basDd,
+      }
+    );
   }
 }
