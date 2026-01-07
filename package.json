@@ -1,0 +1,26 @@
+{
+  "name": "krx-api-client",
+  "version": "0.1.0",
+  "description": "KRX Open API TypeScript 클라이언트",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "krx",
+    "korea-exchange",
+    "api-client",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist"
+  ]
+}
