@@ -13,9 +13,12 @@ AUTH_KEY=your_auth_key_here
 ## 사용법
 
 ```typescript
+import { config } from "dotenv";
 import { KrxOpenApi } from 'krx-api-client';
 
-// AUTH_KEY는 .env 파일에서 자동으로 읽어옵니다
+// .env 파일 로드
+config();
+
 const krx = new KrxOpenApi();
 
 // 지수 카테고리 - KRX 시리즈 일별시세정보
