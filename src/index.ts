@@ -10,12 +10,6 @@ import { KrxClientOptions } from "./core/types";
 
 /**
  * KRX Open API 클라이언트
- *
- * @example
- * ```typescript
- * const krx = new KrxOpenApi(process.env.KRX_SERVICE_KEY!);
- * const data = await krx.index.krxDaily.fetch({ basDd: '20251230' });
- * ```
  */
 export class KrxOpenApi {
   /** 지수 카테고리 */
@@ -60,5 +54,12 @@ export class KrxOpenApi {
 export * from "./core/KrxClient";
 export * from "./core/types";
 export * from "./core/errors";
+
+// 카테고리별 타입 export
 export * from "./categories/index/index.types";
-export * from "./categories/index/IndexClient";
+export * from "./categories/stock/stock.types";
+export * from "./categories/security/security.types";
+export * from "./categories/bond/bond.types";
+export * from "./categories/derivative/derivative.types";
+export * from "./categories/product/product.types";
+export * from "./categories/esg/esg.types";

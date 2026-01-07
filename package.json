@@ -14,7 +14,11 @@
     "api-client",
     "typescript"
   ],
-  "author": "",
+  "author": "FeelsBotMan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FeelsBotMan/krx-api-client.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.19.27",
