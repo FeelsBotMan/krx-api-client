@@ -19,7 +19,7 @@ export class EtfDailyTradeApi {
    */
   fetch(params: { basDd: string }): Promise<EtfDailyTrade[]> {
     return this.client.get<EtfDailyTrade>(API_CATEGORY.SECURITY, this.apiId, {
-      BAS_DD: params.basDd,
+      basDd: params.basDd,
     });
   }
 }

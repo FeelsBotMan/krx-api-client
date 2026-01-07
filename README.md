@@ -10,19 +10,13 @@
 AUTH_KEY=your_auth_key_here
 ```
 
-또는 생성자 옵션으로 직접 전달할 수 있습니다:
-
-```typescript
-const krx = new KrxOpenApi(serviceKey, { authKey: 'your_auth_key' });
-```
-
 ## 사용법
 
 ```typescript
 import { KrxOpenApi } from 'krx-api-client';
 
 // AUTH_KEY는 .env 파일에서 자동으로 읽어옵니다
-const krx = new KrxOpenApi(process.env.KRX_SERVICE_KEY!);
+const krx = new KrxOpenApi();
 
 // 지수 카테고리 - KRX 시리즈 일별시세정보
 const data = await krx.index.krxDaily.fetch({

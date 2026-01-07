@@ -6,6 +6,7 @@ import { BondClient } from "./categories/bond/BondClient";
 import { DerivativeClient } from "./categories/derivative/DerivativeClient";
 import { ProductClient } from "./categories/product/ProductClient";
 import { EsgClient } from "./categories/esg/EsgClient";
+import { KrxClientOptions } from "./core/types";
 
 /**
  * KRX Open API 클라이언트
@@ -39,12 +40,8 @@ export class KrxOpenApi {
    * @param options.baseUrl API 베이스 URL (선택사항, 기본값: https://data-dbg.krx.co.kr)
    * @param options.authKey 인증키 (선택사항, 기본값: process.env.AUTH_KEY)
    */
-  constructor(
-    serviceKey: string,
-    options?: { baseUrl?: string; authKey?: string }
-  ) {
+  constructor(options?: KrxClientOptions) {
     const client = new KrxClient({
-      serviceKey,
       baseUrl: options?.baseUrl,
       authKey: options?.authKey,
     });

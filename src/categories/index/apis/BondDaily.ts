@@ -19,7 +19,7 @@ export class BondDailyApi {
    */
   fetch(params: { basDd: string }): Promise<BondIndexDaily[]> {
     return this.client.get<BondIndexDaily>(API_CATEGORY.INDEX, this.apiId, {
-      BAS_DD: params.basDd,
+      basDd: params.basDd,
     });
   }
 }

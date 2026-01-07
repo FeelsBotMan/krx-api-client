@@ -19,7 +19,7 @@ export class ElwDailyTradeApi {
    */
   fetch(params: { basDd: string }): Promise<ElwDailyTrade[]> {
     return this.client.get<ElwDailyTrade>(API_CATEGORY.SECURITY, this.apiId, {
-      BAS_DD: params.basDd,
+      basDd: params.basDd,
     });
   }
 }

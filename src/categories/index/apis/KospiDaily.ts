@@ -19,7 +19,7 @@ export class KospiDailyApi {
    */
   fetch(params: { basDd: string }): Promise<KrxIndexDaily[]> {
     return this.client.get<KrxIndexDaily>(API_CATEGORY.INDEX, this.apiId, {
-      BAS_DD: params.basDd,
+      basDd: params.basDd,
     });
   }
 }

@@ -19,7 +19,7 @@ export class KtsDailyTradeApi {
    */
   fetch(params: { basDd: string }): Promise<KtsDailyTrade[]> {
     return this.client.get<KtsDailyTrade>(API_CATEGORY.BOND, this.apiId, {
-      BAS_DD: params.basDd,
+      basDd: params.basDd,
     });
   }
 }

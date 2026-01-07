@@ -19,7 +19,7 @@ export class SwDailyTradeApi {
    */
   fetch(params: { basDd: string }): Promise<SwDailyTrade[]> {
     return this.client.get<SwDailyTrade>(API_CATEGORY.STOCK, this.apiId, {
-      BAS_DD: params.basDd,
+      basDd: params.basDd,
     });
   }
 }

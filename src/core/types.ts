@@ -3,7 +3,6 @@
  */
 
 export interface KrxClientOptions {
-  serviceKey: string;
   baseUrl?: string;
   authKey?: string;
 }

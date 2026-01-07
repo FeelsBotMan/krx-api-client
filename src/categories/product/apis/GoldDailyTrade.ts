@@ -22,7 +22,7 @@ export class GoldDailyTradeApi {
       API_CATEGORY.PRODUCT,
       this.apiId,
       {
-        BAS_DD: params.basDd,
+        basDd: params.basDd,
       }
     );
   }

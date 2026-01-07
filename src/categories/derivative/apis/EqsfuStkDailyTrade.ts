@@ -19,7 +19,7 @@ export class EqsfuStkDailyTradeApi {
    */
   fetch(params: { basDd: string }): Promise<FutDailyTrade[]> {
     return this.client.get<FutDailyTrade>(API_CATEGORY.DERIVATIVE, this.apiId, {
-      BAS_DD: params.basDd,
+      basDd: params.basDd,
     });
   }
 }

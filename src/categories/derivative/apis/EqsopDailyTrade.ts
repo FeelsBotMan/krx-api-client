@@ -19,7 +19,7 @@ export class EqsopDailyTradeApi {
    */
   fetch(params: { basDd: string }): Promise<OptDailyTrade[]> {
     return this.client.get<OptDailyTrade>(API_CATEGORY.DERIVATIVE, this.apiId, {
-      BAS_DD: params.basDd,
+      basDd: params.basDd,
     });
   }
 }

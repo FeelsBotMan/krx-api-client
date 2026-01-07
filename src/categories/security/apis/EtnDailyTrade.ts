@@ -19,7 +19,7 @@ export class EtnDailyTradeApi {
    */
   fetch(params: { basDd: string }): Promise<EtnDailyTrade[]> {
     return this.client.get<EtnDailyTrade>(API_CATEGORY.SECURITY, this.apiId, {
-      BAS_DD: params.basDd,
+      basDd: params.basDd,
     });
   }
 }

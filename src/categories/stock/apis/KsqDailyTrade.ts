@@ -19,7 +19,7 @@ export class KsqDailyTradeApi {
    */
   fetch(params: { basDd: string }): Promise<StockDailyTrade[]> {
     return this.client.get<StockDailyTrade>(API_CATEGORY.STOCK, this.apiId, {
-      BAS_DD: params.basDd,
+      basDd: params.basDd,
     });
   }
 }

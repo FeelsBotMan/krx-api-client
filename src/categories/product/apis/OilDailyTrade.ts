@@ -19,7 +19,7 @@ export class OilDailyTradeApi {
    */
   fetch(params: { basDd: string }): Promise<OilDailyTrade[]> {
     return this.client.get<OilDailyTrade>(API_CATEGORY.PRODUCT, this.apiId, {
-      BAS_DD: params.basDd,
+      basDd: params.basDd,
     });
   }
 }

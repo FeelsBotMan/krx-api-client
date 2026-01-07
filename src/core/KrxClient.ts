@@ -6,14 +6,9 @@ import { KrxApiError, KrxClientError } from "./errors";
  */
 export class KrxClient {
   private readonly baseUrl: string;
-  private readonly serviceKey: string;
   private readonly authKey: string;
 
   constructor(options: KrxClientOptions) {
-    if (!options.serviceKey) {
-      throw new KrxClientError("serviceKey is required");
-    }
-
     // AUTH_KEY는 옵션 또는 환경변수에서 가져옴
     const authKey = options.authKey ?? process.env.AUTH_KEY;
     if (!authKey) {
@@ -23,7 +18,6 @@ export class KrxClient {
     }
 
     this.baseUrl = options.baseUrl ?? "https://data-dbg.krx.co.kr";
-    this.serviceKey = options.serviceKey;
     this.authKey = authKey;
   }
 
@@ -41,28 +35,83 @@ export class KrxClient {
   ): Promise<T[]> {
     try {
       const query = new URLSearchParams({
-        serviceKey: this.serviceKey,
         ...params,
       });
 
       const url = `${this.baseUrl}/svc/apis/${category}/${apiId}?${query}`;
+
+      console.log("[KrxClient] Request URL:", url);
+      console.log("[KrxClient] Request Headers:", {
+        AUTH_KEY: this.authKey
+          ? `${this.authKey.substring(0, 8)}...`
+          : "undefined",
+      });
+      console.log("[KrxClient] Request Params:", params);
+
       const response = await fetch(url, {
         headers: {
           AUTH_KEY: this.authKey,
         },
       });
 
+      console.log(
+        "[KrxClient] Response Status:",
+        response.status,
+        response.statusText
+      );
+      console.log(
+        "[KrxClient] Response Headers:",
+        Object.fromEntries(response.headers.entries())
+      );
+
       if (!response.ok) {
+        const errorText = await response.text();
+        console.error("[KrxClient] Error Response Body:", errorText);
         throw new KrxApiError(
           `API request failed with status ${response.status}`,
           response.status
         );
       }
 
-      const json = (await response.json()) as KrxApiResponse<T>;
+      const responseText = await response.text();
+      console.log(
+        "[KrxClient] Response Body (raw):",
+        responseText.substring(0, 500)
+      );
+
+      let json: KrxApiResponse<T>;
+      try {
+        json = JSON.parse(responseText) as KrxApiResponse<T>;
+      } catch (parseError) {
+        console.error("[KrxClient] JSON Parse Error:", parseError);
+        console.error("[KrxClient] Response Text:", responseText);
+        throw new KrxClientError(
+          `Failed to parse JSON response: ${
+            parseError instanceof Error
+              ? parseError.message
+              : String(parseError)
+          }`
+        );
+      }
+
+      console.log(
+        "[KrxClient] Parsed JSON:",
+        JSON.stringify(json, null, 2).substring(0, 1000)
+      );
+      console.log("[KrxClient] OutBlock_1 exists:", !!json?.OutBlock_1);
+      console.log(
+        "[KrxClient] OutBlock_1 is array:",
+        Array.isArray(json?.OutBlock_1)
+      );
+      if (json?.OutBlock_1) {
+        console.log("[KrxClient] OutBlock_1 length:", json.OutBlock_1.length);
+      }
 
       // OutBlock_1이 없거나 배열이 아닌 경우 빈 배열 반환
       if (!Array.isArray(json?.OutBlock_1)) {
+        console.warn(
+          "[KrxClient] OutBlock_1 is not an array, returning empty array"
+        );
         return [];
       }
 

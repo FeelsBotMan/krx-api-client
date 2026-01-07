@@ -22,7 +22,7 @@ export class DerivativeDailyApi {
       API_CATEGORY.INDEX,
       this.apiId,
       {
-        BAS_DD: params.basDd,
+        basDd: params.basDd,
       }
     );
   }
