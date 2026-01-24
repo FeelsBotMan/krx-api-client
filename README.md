@@ -37,6 +37,8 @@ const kosdaqData = await krx.index.kosdaqDaily.fetch({
 });
 ```
 
+* 일일 이용 한도는 인증키당 10,000회/일이며, 한도를 초과하면 respCode: 429 (Too Many Requests)가 반환됨
+
 ## 카테고리
 
 ### 지수 (Index)
